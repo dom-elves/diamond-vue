@@ -3,10 +3,10 @@
 @section('content')
 <p>this is the 'table'</p>
 
-@foreach ($deck as $card)
+<!-- @foreach ($deck as $card)
 {{ $card->code }}
-@endforeach
-
+@endforeach -->
+<player-list />
 <example-component />  
 
 @endsection
