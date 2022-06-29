@@ -22,4 +22,4 @@ Route::get('/', function () {
 //     return view('home');
 // });
 
-Route::get('/home', [APIController::class, 'request']);
+Route::get('/main', [APIController::class, 'request']);

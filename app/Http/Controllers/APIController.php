@@ -50,7 +50,7 @@ class APIController extends Controller
                  $card->code = '10' . $suit;        
              } 
          }
-
-         dd($deck);
+         
+         return view('/table')->with(['deck' => $deck]);
     }
 }
