@@ -15,6 +15,8 @@
             <ul>
                 <li v-for="player in players" v-bind:key="player.id" v-bind:name="player.name">{{ player.id }} {{ player.name }}</li>
             </ul>
+
+            <a href="/board"><button class="p-3 border-2">DEAL</button></a>
     </div>
 </template>
 
@@ -43,7 +45,8 @@
                 
                 nextPlayerId: 4,
 
-                newPlayerName: ''
+                newPlayerName: '',
+                
             }
         },
 
@@ -58,6 +61,7 @@
             addNewPlayer: function () {
 
                 this.players.push({
+                    
                     id: this.nextPlayerId++,
                     name: this.newPlayerName
             })

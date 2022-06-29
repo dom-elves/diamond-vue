@@ -6,7 +6,9 @@
 <!-- @foreach ($deck as $card)
 {{ $card->code }}
 @endforeach -->
-<player-list />
-<example-component />  
+<!-- <player-list /> -->
+
+<list-builder />
+
 
 @endsection

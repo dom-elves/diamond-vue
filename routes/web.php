@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\APIController;
+use App\Http\Controllers\DeckController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,6 @@ Route::get('/', function () {
 // });
 
 Route::get('/main', [APIController::class, 'request']);
+
+
+Route::get('/board', [DeckController::class, 'index']);
