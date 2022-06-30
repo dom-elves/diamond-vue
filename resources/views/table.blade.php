@@ -8,7 +8,9 @@
 @endforeach -->
 <!-- <player-list /> -->
 
-<list-builder />
+<!-- <list-builder /> -->
+
+<player-entry />
 
 
 @endsection

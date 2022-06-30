@@ -25,6 +25,8 @@ Vue.component('player-list', require('./components/PlayerList.vue').default);
 
 Vue.component('list-builder', require('./components/ListBuilder.vue').default);
 
+Vue.component('player-entry', require('./components/PlayerEntry.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

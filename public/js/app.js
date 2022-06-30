@@ -5564,6 +5564,7 @@ window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js
 Vue.component('example-component', (__webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]));
 Vue.component('player-list', (__webpack_require__(/*! ./components/PlayerList.vue */ "./resources/js/components/PlayerList.vue")["default"]));
 Vue.component('list-builder', (__webpack_require__(/*! ./components/ListBuilder.vue */ "./resources/js/components/ListBuilder.vue")["default"]));
+Vue.component('player-entry', (__webpack_require__(/*! ./components/PlayerEntry.vue */ "./resources/js/components/PlayerEntry.vue")["default"]));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -28149,6 +28150,43 @@ component.options.__file = "resources/js/components/ListBuilder.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/PlayerEntry.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/PlayerEntry.vue ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _PlayerEntry_vue_vue_type_template_id_6895ac76___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PlayerEntry.vue?vue&type=template&id=6895ac76& */ "./resources/js/components/PlayerEntry.vue?vue&type=template&id=6895ac76&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _PlayerEntry_vue_vue_type_template_id_6895ac76___WEBPACK_IMPORTED_MODULE_0__.render,
+  _PlayerEntry_vue_vue_type_template_id_6895ac76___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/PlayerEntry.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/PlayerList.vue":
 /*!************************************************!*\
   !*** ./resources/js/components/PlayerList.vue ***!
@@ -28266,6 +28304,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListBuilder_vue_vue_type_template_id_20ccad82___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListBuilder_vue_vue_type_template_id_20ccad82___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ListBuilder.vue?vue&type=template&id=20ccad82& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ListBuilder.vue?vue&type=template&id=20ccad82&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/PlayerEntry.vue?vue&type=template&id=6895ac76&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/PlayerEntry.vue?vue&type=template&id=6895ac76& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayerEntry_vue_vue_type_template_id_6895ac76___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayerEntry_vue_vue_type_template_id_6895ac76___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayerEntry_vue_vue_type_template_id_6895ac76___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PlayerEntry.vue?vue&type=template&id=6895ac76& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PlayerEntry.vue?vue&type=template&id=6895ac76&");
 
 
 /***/ }),
@@ -28393,6 +28448,50 @@ var render = function () {
       _vm._v(" "),
       _c("form", { attrs: { id: "players-list" } }),
     ]),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PlayerEntry.vue?vue&type=template&id=6895ac76&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PlayerEntry.vue?vue&type=template&id=6895ac76& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "form",
+      {
+        on: {
+          submit: function ($event) {
+            $event.preventDefault()
+            return _vm.enterPlayers.apply(null, arguments)
+          },
+        },
+      },
+      [
+        _c("label", { attrs: { for: "player-1" } }, [
+          _vm._v("Enter player name:"),
+        ]),
+        _vm._v(" "),
+        _c("input", { attrs: { id: "player-1", type: "text" } }),
+      ]
+    ),
   ])
 }
 var staticRenderFns = []
