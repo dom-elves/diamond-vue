@@ -68,7 +68,34 @@ class APIController extends Controller
              } 
          }
          
-         return view('/table')->with(['deck' => $deck, 'players' => $players]);
+         //to find out how many cards are required for players
+         $count = count($players_array);
+
+         $total_player_cards = $count * 4;
+         
+         //slicing required board cards off the "end" of the deck
+         $remaining_cards = array_slice($deck, $total_player_cards);
+
+        //slicing the cards for the players
+         $dealt_player_cards = array_slice($deck, 0, $total_player_cards);
+
+         //created hands, will need to figure out how to do this for anything between 0 and 6 at some point
+         $hands = array_chunk($dealt_player_cards, 4);
+         
+         $hand_1 = $hands[0];
+         $hand_2 = $hands[1];
+         $hand_3 = $hands[2];
+         $hand_4 = $hands[3];
+         $hand_5 = $hands[4];
+         $hand_6 = $hands[5];
+        
+         return view('/table')->with(['players' => $players_array, 
+                                      'hand_1' => $hand_1, 
+                                      'hand_2' => $hand_2, 
+                                      'hand_3' => $hand_3, 
+                                      'hand_4' => $hand_4, 
+                                      'hand_5' => $hand_5, 
+                                      'hand_6' => $hand_6,]);
    
     }
 
