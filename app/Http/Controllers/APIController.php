@@ -78,7 +78,7 @@ class APIController extends Controller
 
         //slicing the cards for the players
          $dealt_player_cards = array_slice($deck, 0, $total_player_cards);
-
+         
          //created hands, will need to figure out how to do this for anything between 0 and 6 at some point
          $hands = array_chunk($dealt_player_cards, 4);
          
@@ -95,7 +95,8 @@ class APIController extends Controller
                                       'hand_3' => $hand_3, 
                                       'hand_4' => $hand_4, 
                                       'hand_5' => $hand_5, 
-                                      'hand_6' => $hand_6,]);
+                                      'hand_6' => $hand_6,
+                                      'deck' => $remaining_cards]);
    
     }
 
