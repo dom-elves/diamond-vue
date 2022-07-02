@@ -7,8 +7,26 @@ use Illuminate\Support\Facades\Http;
 
 class APIController extends Controller
 {
-    public function request()
+
+    public function index()
     {
+        return view('/home');
+    }
+
+    public function buildPlayerList(Request $request)
+    {
+        $players_array = [];
+
+        $players_array[] = $request->input('player-1');
+        $players_array[] = $request->input('player-2');
+        $players_array[] = $request->input('player-3');
+        $players_array[] = $request->input('player-4');
+        $players_array[] = $request->input('player-5');
+        $players_array[] = $request->input('player-6');
+
+        //casting to object so it can be looped through
+        $players = (object) $players_array;
+
          //inital request
          $response = Http::get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1');
 
@@ -24,7 +42,6 @@ class APIController extends Controller
          //built new uri with unique deck
          $all_cards = $base . $unique_deck . $draw;
  
-         
          //rebuilding the query
          $response = Http::get($all_cards);
  
@@ -51,6 +68,8 @@ class APIController extends Controller
              } 
          }
          
-         return view('/table')->with(['deck' => $deck]);
+         return view('/table')->with(['deck' => $deck, 'players' => $players]);
+   
     }
+
 }

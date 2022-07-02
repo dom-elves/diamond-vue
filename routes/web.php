@@ -23,7 +23,11 @@ Route::get('/', function () {
 //     return view('home');
 // });
 
+Route::get('/home', [APIController::class, 'index']);
+
 Route::get('/main', [APIController::class, 'request']);
+
+Route::get('/enter-player-names', [APIController::class, 'buildPlayerList']);
 
 
 Route::get('/board', [DeckController::class, 'index']);
