@@ -1,8 +1,13 @@
 <template>
     <div class="m-3">
-        <p class="font-bold">{{ this.player }}</p>
 
-        <p v-for="card in this.hand">{{ card.code }}</p>
+        <p>{{ this.player }}</p>
+
+        <div class="flex flex-row justify-around">
+
+            <p v-for="card in this.hand" class="m-2">{{ card.code }}</p>
+
+        </div>
 
     </div>
 </template>

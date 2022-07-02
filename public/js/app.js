@@ -5488,6 +5488,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['player', 'hand'],
   mounted: function mounted() {
@@ -28582,18 +28587,18 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "m-3" },
-    [
-      _c("p", { staticClass: "font-bold" }, [_vm._v(_vm._s(this.player))]),
-      _vm._v(" "),
+  return _c("div", { staticClass: "m-3" }, [
+    _c("p", [_vm._v(_vm._s(this.player))]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "flex flex-row justify-around" },
       _vm._l(this.hand, function (card) {
-        return _c("p", [_vm._v(_vm._s(card.code))])
+        return _c("p", { staticClass: "m-2" }, [_vm._v(_vm._s(card.code))])
       }),
-    ],
-    2
-  )
+      0
+    ),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

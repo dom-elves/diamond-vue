@@ -11,7 +11,6 @@
     </head>
 
     <body>
-        <p>outside of vue</p>
         
         <div id="app">
 
