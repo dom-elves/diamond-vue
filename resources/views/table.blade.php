@@ -17,7 +17,7 @@
             <player-component v-bind:player="{{ json_encode($players[1]) }}" :hand="{{ json_encode($hand_2) }}"></player-component>
 
             <player-component v-bind:player="{{ json_encode($players[2]) }}" :hand="{{ json_encode($hand_3) }}"></player-component>
-
+            
         </div>
 
         <div>
@@ -35,6 +35,8 @@
             <player-component v-bind:player="{{ json_encode($players[5]) }}" :hand="{{ json_encode($hand_6) }}"></player-component>
 
         </div>
+
+        
 
 </div>
 
