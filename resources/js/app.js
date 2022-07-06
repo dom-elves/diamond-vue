@@ -29,6 +29,10 @@ Vue.component('player-component', require('./components/PlayerComponent.vue').de
 
 Vue.component('player-card', require('./components/PlayerCard.vue').default);
 
+Vue.component('board-card', require('./components/BoardCard.vue').default);
+
+Vue.component('diamond-board', require('./components/DiamondBoard.vue').default);
+
 
 
 

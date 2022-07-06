@@ -5,7 +5,7 @@
 <div>
     <p>board of cards</p>
     
-{{ $deck[0]->code }}
+<!-- {{ $deck[0]->code }} -->
 
 
     <div class=" flex flex-row justify-between"> <!-- no idea why but this only works with inline styling, tailwind flex wasn't working-->
@@ -20,11 +20,13 @@
             
         </div>
 
-        <div>
+        <!-- <div>
             @foreach ($deck as $card) 
             {{ $card->code }}
             @endforeach
-        </div>
+        </div> -->
+
+        <diamond-board v-bind:deck="{{ json_encode($deck) }}"></diamond-board>
 
         <div>
 

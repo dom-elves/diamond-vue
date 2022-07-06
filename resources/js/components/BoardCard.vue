@@ -1,11 +1,7 @@
 <template>
     <div>
 
-        <div :class="this.card.suit" id="card">
-
-            <p>{{ this.card.code }}</p>
-        
-        </div>
+        <p>board card</p>
 
     </div>
 </template>
@@ -13,7 +9,7 @@
 <script>
 export default {
 
-        name: 'PlayerCard',
+        name: 'BoardCard',
 
         props: ['card'], 
 
