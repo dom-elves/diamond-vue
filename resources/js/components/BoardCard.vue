@@ -1,11 +1,13 @@
 <template>
-    <div>
+    <div class="flex">
 
         <div :class="this.card.suit" class="card" @click="reveal" :id="this.card.code">
 
             <p>{{ this.card.code }}</p>
         
         </div>
+
+        <div class="backcard"></div>
  
     </div>
 </template>
@@ -41,6 +43,7 @@ export default {
                 } else {
                     alert(`if your card is ${value} nominate ${row}`);
                 }
+
             }
         }
 
@@ -58,6 +61,7 @@ export default {
     justify-content: center;
     margin: 2px;
     padding: 2px;
+    /* position: relative; */
 }
 
 .diamonds, .hearts {
@@ -74,5 +78,20 @@ export default {
 p {
     font-weight: bolder;
     font-size: 30px;
+}
+
+.backcard {
+    width: 64px;
+    height: 100px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    padding: 2px;
+    border: 3px solid blue;
+    color: blue;
+    background-color: blue;
+    /* position: relative; */
 }
 </style>
