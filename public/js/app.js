@@ -5376,10 +5376,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'BoardCard',
   props: ['card'],
-  mounted: function mounted() {// console.log(this.card);
+  mounted: function mounted() {
+    console.log(this.card);
+  },
+  methods: {
+    reveal: function reveal() {
+      //card value
+      var value = this._props.card.value; //card itself to eventually access row
+
+      var self = document.getElementById(this.card.code); //finding out the parent div
+
+      var row_name = self.closest("div > section").id; //taking the value off the end
+
+      var row = row_name.substr(row_name.length - 1);
+
+      if (row % 2 == 0) {
+        alert("if your card is ".concat(value, " drink ").concat(row));
+      } else {
+        alert("if your card is ".concat(value, " nominate ").concat(row));
+      }
+    }
   }
 });
 
@@ -5397,6 +5420,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _BoardCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BoardCard.vue */ "./resources/js/components/BoardCard.vue");
+//
+//
 //
 //
 //
@@ -10772,7 +10797,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#card[data-v-1943ab8a] {\r\n    width: 80px;\r\n    height: 120px;\r\n    border-radius: 7px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 2px;\r\n    padding: 2px;\n}\n.diamonds[data-v-1943ab8a], .hearts[data-v-1943ab8a] {\r\n    border: 3px solid red;\r\n    color: red;\n}\n.clubs[data-v-1943ab8a], .spades[data-v-1943ab8a] {\r\n    border: 3px solid black;\r\n    color: black;\n}\np[data-v-1943ab8a] {\r\n    font-weight: bolder;\r\n    font-size: 35px;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.card[data-v-1943ab8a] {\r\n    width: 64px;\r\n    height: 100px;\r\n    border-radius: 7px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 2px;\r\n    padding: 2px;\n}\n.diamonds[data-v-1943ab8a], .hearts[data-v-1943ab8a] {\r\n    border: 3px solid red;\r\n    color: red;\n}\n.clubs[data-v-1943ab8a], .spades[data-v-1943ab8a] {\r\n    border: 3px solid black;\r\n    color: black;\n}\np[data-v-1943ab8a] {\r\n    font-weight: bolder;\r\n    font-size: 30px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -10796,7 +10821,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#card[data-v-9daea488] {\r\n    width: 80px;\r\n    height: 120px;\r\n    border-radius: 7px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 2px;\r\n    padding: 2px;\n}\n.diamonds[data-v-9daea488], .hearts[data-v-9daea488] {\r\n    border: 3px solid red;\r\n    color: red;\n}\n.clubs[data-v-9daea488], .spades[data-v-9daea488] {\r\n    border: 3px solid black;\r\n    color: black;\n}\np[data-v-9daea488] {\r\n    font-weight: bolder;\r\n    font-size: 35px;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.card[data-v-9daea488] {\r\n    width: 80px;\r\n    height: 120px;\r\n    border-radius: 7px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 2px;\r\n    padding: 2px;\n}\n.diamonds[data-v-9daea488], .hearts[data-v-9daea488] {\r\n    border: 3px solid red;\r\n    color: red;\n}\n.clubs[data-v-9daea488], .spades[data-v-9daea488] {\r\n    border: 3px solid black;\r\n    color: black;\n}\np[data-v-9daea488] {\r\n    font-weight: bolder;\r\n    font-size: 35px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29128,16 +29153,20 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "card",
+        class: this.card.suit,
+        attrs: { id: this.card.code },
+        on: { click: _vm.reveal },
+      },
+      [_c("p", [_vm._v(_vm._s(this.card.code))])]
+    ),
+  ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("board card")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -29168,14 +29197,14 @@ var render = function () {
     },
     [
       _c(
-        "div",
+        "section",
         { attrs: { id: "row-1" } },
         [_c("board-card", { attrs: { card: this.deck[0] } })],
         1
       ),
       _vm._v(" "),
       _c(
-        "div",
+        "section",
         { staticClass: "flex flex-row", attrs: { id: "row-2" } },
         [
           _c("board-card", { attrs: { card: this.deck[1] } }),
@@ -29186,8 +29215,8 @@ var render = function () {
       ),
       _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "flex flex-row", attrs: { id: "row-2" } },
+        "section",
+        { staticClass: "flex flex-row", attrs: { id: "row-3" } },
         [
           _c("board-card", { attrs: { card: this.deck[3] } }),
           _vm._v(" "),
@@ -29199,8 +29228,8 @@ var render = function () {
       ),
       _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "flex flex-row", attrs: { id: "row-2" } },
+        "section",
+        { staticClass: "flex flex-row", attrs: { id: "row-4" } },
         [
           _c("board-card", { attrs: { card: this.deck[6] } }),
           _vm._v(" "),
@@ -29214,8 +29243,8 @@ var render = function () {
       ),
       _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "flex flex-row", attrs: { id: "row-2" } },
+        "section",
+        { staticClass: "flex flex-row", attrs: { id: "row-5" } },
         [
           _c("board-card", { attrs: { card: this.deck[10] } }),
           _vm._v(" "),
@@ -29231,8 +29260,8 @@ var render = function () {
       ),
       _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "flex flex-row", attrs: { id: "row-2" } },
+        "section",
+        { staticClass: "flex flex-row", attrs: { id: "row-6" } },
         [
           _c("board-card", { attrs: { card: this.deck[15] } }),
           _vm._v(" "),
@@ -29246,8 +29275,8 @@ var render = function () {
       ),
       _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "flex flex-row", attrs: { id: "row-2" } },
+        "section",
+        { staticClass: "flex flex-row", attrs: { id: "row-7" } },
         [
           _c("board-card", { attrs: { card: this.deck[19] } }),
           _vm._v(" "),
@@ -29259,8 +29288,8 @@ var render = function () {
       ),
       _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "flex flex-row", attrs: { id: "row-2" } },
+        "section",
+        { staticClass: "flex flex-row", attrs: { id: "row-8" } },
         [
           _c("board-card", { attrs: { card: this.deck[22] } }),
           _vm._v(" "),
@@ -29270,8 +29299,8 @@ var render = function () {
       ),
       _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "flex flex-row", attrs: { id: "row-2" } },
+        "section",
+        { staticClass: "flex flex-row", attrs: { id: "row-9" } },
         [_c("board-card", { attrs: { card: this.deck[24] } })],
         1
       ),
@@ -29350,7 +29379,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { class: this.card.suit, attrs: { id: "card" } }, [
+    _c("div", { staticClass: "card", class: this.card.suit }, [
       _c("p", [_vm._v(_vm._s(this.card.code))]),
     ]),
   ])

@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <div :class="this.card.suit" id="card">
+        <div :class="this.card.suit" class="card">
 
             <p>{{ this.card.code }}</p>
         
@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 
-#card {
+.card {
     width: 80px;
     height: 120px;
     border-radius: 7px;

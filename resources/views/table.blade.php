@@ -8,9 +8,9 @@
 <!-- {{ $deck[0]->code }} -->
 
 
-    <div class=" flex flex-row justify-between"> <!-- no idea why but this only works with inline styling, tailwind flex wasn't working-->
+    <div class=" flex flex-row justify-between"> 
 
-        <div>
+        <div class="flex flex-column justify-between">
 
             <player-component v-bind:player="{{ json_encode($players[0]) }}" :hand="{{ json_encode($hand_1) }}"></player-component>
 
@@ -20,15 +20,9 @@
             
         </div>
 
-        <!-- <div>
-            @foreach ($deck as $card) 
-            {{ $card->code }}
-            @endforeach
-        </div> -->
-
         <diamond-board v-bind:deck="{{ json_encode($deck) }}"></diamond-board>
 
-        <div>
+        <div class="flex flex-column justify-between">
 
             <player-component v-bind:player="{{ json_encode($players[3]) }}" :hand="{{ json_encode($hand_4) }}"></player-component>
 
