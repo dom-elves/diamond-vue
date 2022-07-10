@@ -1,7 +1,7 @@
 <template>
     <div class="flex">
 
-        <div :class="this.card.suit" class="card" @click="reveal" :id="this.card.code">
+        <div @click="reveal" class="card backcard" :id="this.card.code">
 
             <p>{{ this.card.code }}</p>
         
@@ -18,7 +18,7 @@ export default {
         props: ['card'], 
 
         mounted() {
-            console.log(this.card);
+            // console.log(this.card);
             
             
         },
@@ -28,41 +28,41 @@ export default {
             reveal() {
                 //card value
                 var value = this._props.card.value;
-
+                
                 //card itself to eventually access row
                 var self = document.getElementById(this.card.code);
                 //finding out the parent div
                 var row_name = self.closest("div > section").id;
                 //taking the value off the end
                 var row = row_name.substr(row_name.length -1);
+                
+                //annoying i think it has to be individual checks, seems like .contains() didn't like an array of classes?
+                //
+                if (this.card.suit == "DIAMONDS") {
+                    self.classList.add("DIAMONDS");
+                    self.classList.remove("backcard");
+                }
 
+                if (this.card.suit == "HEARTS") {
+                    self.classList.add("HEARTS");
+                    self.classList.remove("backcard");
+                }
+
+                if (this.card.suit == "CLUBS") {
+                    self.classList.add("CLUBS");
+                    self.classList.remove("backcard");
+                }
+
+                if (this.card.suit == "SPADES") {
+                    self.classList.add("SPADES");
+                    self.classList.remove("backcard");
+                }
+
+                //checking the row to see if it's a drink or nominate
                 if (row % 2 == 0) {
                     alert(`if your card is ${value} nominate ${row}`);
                 } else {
                     alert(`if your card is ${value} drink ${row}`);
-                }
-                
-                //annoying i think it has to be individual checks, seems like .contains() didn't like an array of classes?
-                //
-                if (self.classList.contains("DIAMONDS")) {
-                    self.classList.remove("DIAMONDS");
-                    self.classList.add("backcard");
-                    
-                }
-
-                if (self.classList.contains("HEARTS")) {
-                    self.classList.remove("HEARTS");
-                    self.classList.add("backcard");
-                }
-
-                if (self.classList.contains("CLUBS")) {
-                    self.classList.remove("CLUBS");
-                    self.classList.add("backcard");
-                }
-
-                if (self.classList.contains("SPADES")) {
-                    self.classList.remove("SPADES");
-                    self.classList.add("backcard");
                 }
             }
         }
@@ -87,11 +87,13 @@ export default {
 .diamonds, .hearts {
     border: 3px solid red;
     color: red;
+    pointer-events: none;
 }
 
 .clubs, .spades {
     border: 3px solid black;
     color: black;
+    pointer-events: none;
 }
 
 
@@ -112,6 +114,5 @@ p {
     border: 3px solid blue;
     color: blue;
     background-color: blue;
-    pointer-events: none
 }
 </style>

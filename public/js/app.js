@@ -5383,8 +5383,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'BoardCard',
   props: ['card'],
-  mounted: function mounted() {
-    console.log(this.card);
+  mounted: function mounted() {// console.log(this.card);
   },
   methods: {
     reveal: function reveal() {
@@ -5395,34 +5394,34 @@ __webpack_require__.r(__webpack_exports__);
 
       var row_name = self.closest("div > section").id; //taking the value off the end
 
-      var row = row_name.substr(row_name.length - 1);
+      var row = row_name.substr(row_name.length - 1); //annoying i think it has to be individual checks, seems like .contains() didn't like an array of classes?
+      //
+
+      if (this.card.suit == "DIAMONDS") {
+        self.classList.add("DIAMONDS");
+        self.classList.remove("backcard");
+      }
+
+      if (this.card.suit == "HEARTS") {
+        self.classList.add("HEARTS");
+        self.classList.remove("backcard");
+      }
+
+      if (this.card.suit == "CLUBS") {
+        self.classList.add("CLUBS");
+        self.classList.remove("backcard");
+      }
+
+      if (this.card.suit == "SPADES") {
+        self.classList.add("SPADES");
+        self.classList.remove("backcard");
+      } //checking the row to see if it's a drink or nominate
+
 
       if (row % 2 == 0) {
         alert("if your card is ".concat(value, " nominate ").concat(row));
       } else {
         alert("if your card is ".concat(value, " drink ").concat(row));
-      } //annoying i think it has to be individual checks, seems like .contains() didn't like an array of classes?
-      //
-
-
-      if (self.classList.contains("DIAMONDS")) {
-        self.classList.remove("DIAMONDS");
-        self.classList.add("backcard");
-      }
-
-      if (self.classList.contains("HEARTS")) {
-        self.classList.remove("HEARTS");
-        self.classList.add("backcard");
-      }
-
-      if (self.classList.contains("CLUBS")) {
-        self.classList.remove("CLUBS");
-        self.classList.add("backcard");
-      }
-
-      if (self.classList.contains("SPADES")) {
-        self.classList.remove("SPADES");
-        self.classList.add("backcard");
       }
     }
   }
@@ -5621,10 +5620,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['player', 'hand'],
   components: {
     PlayerCard: _PlayerCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  mounted: function mounted() {// console.log(this.player, this.hand);
-  },
-  methods: {}
+  }
 });
 
 /***/ }),
@@ -10821,7 +10817,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.card[data-v-1943ab8a] {\r\n    width: 64px;\r\n    height: 100px;\r\n    border-radius: 7px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 2px;\r\n    padding: 2px;\r\n    /* position: relative; */\n}\n.diamonds[data-v-1943ab8a], .hearts[data-v-1943ab8a] {\r\n    border: 3px solid red;\r\n    color: red;\n}\n.clubs[data-v-1943ab8a], .spades[data-v-1943ab8a] {\r\n    border: 3px solid black;\r\n    color: black;\n}\np[data-v-1943ab8a] {\r\n    font-weight: bolder;\r\n    font-size: 30px;\n}\n.backcard[data-v-1943ab8a] {\r\n    width: 64px;\r\n    height: 100px;\r\n    border-radius: 7px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 2px;\r\n    padding: 2px;\r\n    border: 3px solid blue;\r\n    color: blue;\r\n    background-color: blue;\r\n    pointer-events: none\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.card[data-v-1943ab8a] {\r\n    width: 64px;\r\n    height: 100px;\r\n    border-radius: 7px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 2px;\r\n    padding: 2px;\r\n    /* position: relative; */\n}\n.diamonds[data-v-1943ab8a], .hearts[data-v-1943ab8a] {\r\n    border: 3px solid red;\r\n    color: red;\r\n    pointer-events: none;\n}\n.clubs[data-v-1943ab8a], .spades[data-v-1943ab8a] {\r\n    border: 3px solid black;\r\n    color: black;\r\n    pointer-events: none;\n}\np[data-v-1943ab8a] {\r\n    font-weight: bolder;\r\n    font-size: 30px;\n}\n.backcard[data-v-1943ab8a] {\r\n    width: 64px;\r\n    height: 100px;\r\n    border-radius: 7px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 2px;\r\n    padding: 2px;\r\n    border: 3px solid blue;\r\n    color: blue;\r\n    background-color: blue;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29250,8 +29246,7 @@ var render = function () {
     _c(
       "div",
       {
-        staticClass: "card",
-        class: this.card.suit,
+        staticClass: "card backcard",
         attrs: { id: this.card.code },
         on: { click: _vm.reveal },
       },

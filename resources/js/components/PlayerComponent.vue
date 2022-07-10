@@ -34,16 +34,5 @@ export default {
 
         },
 
-        mounted() {
-            // console.log(this.player, this.hand);
-            
-            
-        },
-
-        methods: {
-
-            
-        }
-
 }
 </script>
