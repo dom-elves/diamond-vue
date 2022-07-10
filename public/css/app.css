@@ -10817,6 +10817,9 @@ video {
 .h-16 {
     height: 4rem
 }
+.h-\[100px\] {
+    height: 100px
+}
 .min-h-screen {
     min-height: 100vh
 }
@@ -10831,6 +10834,9 @@ video {
 }
 .w-auto {
     width: auto
+}
+.w-\[100px\] {
+    width: 100px
 }
 .max-w-6xl {
     max-width: 72rem
@@ -10861,6 +10867,9 @@ video {
 }
 .rounded-lg {
     border-radius: 0.5rem
+}
+.rounded-full {
+    border-radius: 9999px
 }
 .border-4 {
     border-width: 4px

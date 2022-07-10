@@ -4,7 +4,7 @@
 
 <section>
 
-    <form class="flex flex-column" action="/enter-player-names">
+    <form class="flex flex-column items-center" action="/enter-player-names">
     {{ csrf_field() }}
 
         <div class="flex flex-row justify-center">
@@ -48,7 +48,7 @@
 
         </div>
 
-        <button class="text-5xl">Go</button>
+        <button class="text-5xl w-[100px] h-[100px] rounded-full border-4 border-green-500 bg-white">Go</button>
         
     </form>
 
