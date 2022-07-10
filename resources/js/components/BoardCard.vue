@@ -6,8 +6,6 @@
             <p>{{ this.card.code }}</p>
         
         </div>
-
-        <div class="backcard"></div>
  
     </div>
 </template>
@@ -43,7 +41,29 @@ export default {
                 } else {
                     alert(`if your card is ${value} nominate ${row}`);
                 }
+                
+                //annoying i think it has to be individual checks, seems like .contains() didn't like an array of classes?
+                //
+                if (self.classList.contains("DIAMONDS")) {
+                    self.classList.remove("DIAMONDS");
+                    self.classList.add("backcard");
+                    
+                }
 
+                if (self.classList.contains("HEARTS")) {
+                    self.classList.remove("HEARTS");
+                    self.classList.add("backcard");
+                }
+
+                if (self.classList.contains("CLUBS")) {
+                    self.classList.remove("CLUBS");
+                    self.classList.add("backcard");
+                }
+
+                if (self.classList.contains("SPADES")) {
+                    self.classList.remove("SPADES");
+                    self.classList.add("backcard");
+                }
             }
         }
 
@@ -92,6 +112,6 @@ p {
     border: 3px solid blue;
     color: blue;
     background-color: blue;
-    /* position: relative; */
+    pointer-events: none
 }
 </style>
