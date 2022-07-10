@@ -16,14 +16,51 @@ class APIController extends Controller
     public function buildPlayerList(Request $request)
     {
         $players_array = [];
+        //6 checks for empty player fields
+        if ($request->input('player-1') == '') {
+            $player_1 = 'empty';
+        } else {
+            $player_1 = $request->input('player-1') ;
+        }
 
-        $players_array[] = $request->input('player-1');
-        $players_array[] = $request->input('player-2');
-        $players_array[] = $request->input('player-3');
-        $players_array[] = $request->input('player-4');
-        $players_array[] = $request->input('player-5');
-        $players_array[] = $request->input('player-6');
+        if ($request->input('player-2') == '') {
+            $player_2 = 'empty';
+        } else {
+            $player_2 = $request->input('player-2') ;
+        }
 
+        if ($request->input('player-3') == '') {
+            $player_3 = 'empty';
+        } else {
+            $player_3 = $request->input('player-3') ;
+        }
+
+        if ($request->input('player-4') == '') {
+            $player_4 = 'empty';
+        } else {
+            $player_4 = $request->input('player-4') ;
+        }
+
+        if ($request->input('player-5') == '') {
+            $player_5 = 'empty';
+        } else {
+            $player_5 = $request->input('player-5') ;
+        }
+
+        if ($request->input('player-6') == '') {
+            $player_6 = 'empty';
+        } else {
+            $player_6 = $request->input('player-6') ;
+        }
+        
+
+        $players_array[] = $player_1;
+        $players_array[] = $player_2;
+        $players_array[] = $player_3;
+        $players_array[] = $player_4;
+        $players_array[] = $player_5;
+        $players_array[] = $player_6;
+        
         //casting to object so it can be looped through
         $players = (object) $players_array;
 
@@ -88,7 +125,34 @@ class APIController extends Controller
          $hand_4 = $hands[3];
          $hand_5 = $hands[4];
          $hand_6 = $hands[5];
-        
+         
+
+         //6 checks for empty players, makes hand null if empty - probably a better way to do this 
+         if ($player_1 == 'empty') {
+            $hand_1 = null;
+         }
+
+         if ($player_2 == 'empty') {
+            $hand_2 = null;
+         }
+
+         if ($player_3 == 'empty') {
+            $hand_3 = null;
+         }
+
+         if ($player_4 == 'empty') {
+            $hand_4 = null;
+         }
+
+         if ($player_5 == 'empty') {
+            $hand_5 = null;
+         }
+
+         if ($player_6 == 'empty') {
+            $hand_6 = null;
+         }
+
+
          return view('/table')->with(['players' => $players_array, 
                                       'hand_1' => $hand_1, 
                                       'hand_2' => $hand_2, 
