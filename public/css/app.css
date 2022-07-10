@@ -10753,8 +10753,14 @@ video {
 .right-0 {
     right: 0px
 }
+.m-5 {
+    margin: 1.25rem
+}
 .m-3 {
     margin: 0.75rem
+}
+.m-10 {
+    margin: 2.5rem
 }
 .mx-auto {
     margin-left: auto;
@@ -10808,6 +10814,9 @@ video {
 .h-16 {
     height: 4rem
 }
+.h-\[50px\] {
+    height: 50px
+}
 .min-h-screen {
     min-height: 100vh
 }
@@ -10819,6 +10828,9 @@ video {
 }
 .w-auto {
     width: auto
+}
+.w-full {
+    width: 100%
 }
 .max-w-6xl {
     max-width: 72rem
@@ -10847,11 +10859,20 @@ video {
 .rounded-lg {
     border-radius: 0.5rem
 }
+.rounded-sm {
+    border-radius: 0.125rem
+}
+.rounded {
+    border-radius: 0.25rem
+}
 .border {
     border-width: 1px
 }
 .border-2 {
     border-width: 2px
+}
+.border-4 {
+    border-width: 4px
 }
 .border-t {
     border-top-width: 1px
@@ -10859,6 +10880,10 @@ video {
 .border-gray-200 {
     --tw-border-opacity: 1;
     border-color: rgb(229 231 235 / var(--tw-border-opacity))
+}
+.border-green-500 {
+    --tw-border-opacity: 1;
+    border-color: rgb(34 197 94 / var(--tw-border-opacity))
 }
 .bg-white {
     --tw-bg-opacity: 1;
@@ -10896,8 +10921,23 @@ video {
     font-size: 1.125rem;
     line-height: 1.75rem
 }
+.text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem
+}
+.text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem
+}
+.text-5xl {
+    font-size: 3rem;
+    line-height: 1
+}
 .font-semibold {
     font-weight: 600
+}
+.font-bold {
+    font-weight: 700
 }
 .leading-7 {
     line-height: 1.75rem

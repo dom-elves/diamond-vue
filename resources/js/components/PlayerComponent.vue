@@ -1,7 +1,7 @@
 <template>
     <div class="m-3">
 
-        <p>{{ this.player }}</p>
+        <p class="text-3xl font-bold">{{ this.player }}</p>
 
         <div class="flex flex-row justify-around">
 

@@ -5398,9 +5398,9 @@ __webpack_require__.r(__webpack_exports__);
       var row = row_name.substr(row_name.length - 1);
 
       if (row % 2 == 0) {
-        alert("if your card is ".concat(value, " drink ").concat(row));
-      } else {
         alert("if your card is ".concat(value, " nominate ").concat(row));
+      } else {
+        alert("if your card is ".concat(value, " drink ").concat(row));
       } //annoying i think it has to be individual checks, seems like .contains() didn't like an array of classes?
       //
 
@@ -5442,6 +5442,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _BoardCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BoardCard.vue */ "./resources/js/components/BoardCard.vue");
+//
+//
 //
 //
 //
@@ -10843,7 +10845,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* #row-1, #row-2, #row-3, #row-4, #row-5, #row-6, #row-7, #row-8, #row-9 {\r\n  position: absolute;\r\n} */\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* #row-1, #row-2, #row-3, #row-4, #row-5, #row-6, #row-7, #row-8, #row-9 {\r\n  position: absolute;\r\n} */\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29287,6 +29289,10 @@ var render = function () {
       attrs: { id: "board-container" },
     },
     [
+      _c("h1", { staticClass: "text-4xl font-bold" }, [
+        _vm._v(" Start from the top "),
+      ]),
+      _vm._v(" "),
       _c(
         "section",
         { attrs: { id: "row-1" } },
@@ -29499,7 +29505,9 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "m-3" }, [
-    _c("p", [_vm._v(_vm._s(this.player))]),
+    _c("p", { staticClass: "text-3xl font-bold" }, [
+      _vm._v(_vm._s(this.player)),
+    ]),
     _vm._v(" "),
     _c(
       "div",

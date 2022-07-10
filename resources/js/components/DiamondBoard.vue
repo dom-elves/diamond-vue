@@ -1,6 +1,8 @@
 <template>
   <div id="board-container" class="flex flex-column items-center">
 
+    <h1 class="text-4xl font-bold"> Start from the top </h1>
+
     <section id="row-1">
       <board-card v-bind:card="this.deck[0]"></board-card>
     </section >

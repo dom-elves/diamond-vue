@@ -37,9 +37,9 @@ export default {
                 var row = row_name.substr(row_name.length -1);
 
                 if (row % 2 == 0) {
-                    alert(`if your card is ${value} drink ${row}`);
-                } else {
                     alert(`if your card is ${value} nominate ${row}`);
+                } else {
+                    alert(`if your card is ${value} drink ${row}`);
                 }
                 
                 //annoying i think it has to be individual checks, seems like .contains() didn't like an array of classes?
