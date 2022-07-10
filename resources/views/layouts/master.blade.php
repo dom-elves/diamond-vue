@@ -10,7 +10,7 @@
 
     </head>
 
-    <body style="background-color: #ccc">
+    <body style="background-color: #89CFF0">
         
         <div id="app">
 
