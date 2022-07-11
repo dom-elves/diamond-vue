@@ -31,3 +31,7 @@ Route::get('/enter-player-names', [APIController::class, 'buildPlayerList']);
 
 
 Route::get('/board', [DeckController::class, 'index']);
+
+Route::get('/redblack', function() {
+    return view('/redblack');
+});

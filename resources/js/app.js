@@ -33,6 +33,8 @@ Vue.component('board-card', require('./components/BoardCard.vue').default);
 
 Vue.component('diamond-board', require('./components/DiamondBoard.vue').default);
 
+Vue.component('red-black', require('./components/RedBlack.vue').default);
+
 
 
 
